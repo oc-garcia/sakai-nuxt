@@ -1,24 +1,18 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-
   app: {
     head: {
       meta: [
         { 'http-equiv': 'x-ua-compatible', 'content': 'IE=edge' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
       ],
-      link: [
-        { rel: 'icon', href: '/favicon.ico' }
-      ]
+      link: [{ rel: 'icon', href: '/favicon.ico' }]
     }
   },
-
+  plugins: ['~/middleware/auth.js'],
   build: {
-    transpile: [
-      'chart.js',
-      'primevue'
-    ]
+    transpile: ['chart.js', 'primevue']
   },
 
   components: {
